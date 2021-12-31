@@ -32,11 +32,11 @@ public class ResourceExceptionHandler {
 		StandardError error = new StandardError();
 		error.setTimestamp(Instant.now());
 		error.setStatus(HttpStatus.BAD_REQUEST.value());
-		error.setError("Database Exception");
+		error.setError("Deu Erro loko aqui");
 		error.setMessage(e.getMessage());
 		error.setPath(request.getRequestURI());
 		
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
 	}
 	
 	
