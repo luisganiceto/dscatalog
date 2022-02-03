@@ -138,7 +138,7 @@ public class ProductServiceTests {
 	public void findByIdShouldThrowResourceNotFoundExceptionWhenIdNotExists() {
 		
 		Assertions.assertThrows(ResourceNotFoundException.class, () -> {
-			ProductDTO result = service.findById(noExistingId);
+			service.findById(noExistingId);
 		});
 		
 		verify(repository, times(1)).findById(noExistingId);
@@ -159,7 +159,7 @@ public class ProductServiceTests {
 		ProductDTO productDTO = Factory.createProductDTO(); 
 		
 		Assertions.assertThrows(ResourceNotFoundException.class, () -> {
-			ProductDTO result = service.update(noExistingId, productDTO);
+			service.update(noExistingId, productDTO);
 		});
 	}
 	
